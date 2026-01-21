@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: quay-appproject
+  namespace: openshift-gitops
+spec:
+  description: GitOps for Quay installation
+  sourceRepos:
+    - '*'
+  destinations:
+    - namespace: openshift-operators
+      server: https://kubernetes.default.svc
+    - namespace: quay-registry
+      server: https://kubernetes.default.svc
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'

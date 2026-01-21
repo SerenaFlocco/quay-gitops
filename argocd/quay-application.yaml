@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: quay
+  namespace: argocd
+spec:
+  project: quay
+
+  source:
+    repoURL: https://git.example.com/platform/quay-gitops.git
+    targetRevision: main
+    path: quay
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: openshift-operators
+
+  syncPolicy:
+    automated: null
+    syncOptions:
+      - CreateNamespace=true
