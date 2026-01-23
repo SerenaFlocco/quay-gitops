@@ -1,8 +1,8 @@
 apiVersion: quay.redhat.com/v1
 kind: QuayRegistry
 metadata:
-  name: quay-registry
-  namespace: quay-registry
+  name: quay
+  namespace: registry
 spec:
   components:
   - kind: clair

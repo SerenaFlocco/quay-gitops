@@ -2,14 +2,14 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: quay
-  namespace: argocd
+  namespace: openshift-gitops
 spec:
   project: quay
 
   source:
-    repoURL: https://git.example.com/platform/quay-gitops.git
-    targetRevision: main
-    path: quay
+    repoURL: https://github.com/SerenaFlocco/quay-gitops.git
+    targetRevision: master
+    path: quay/overlay/clusterB
 
   destination:
     server: https://kubernetes.default.svc

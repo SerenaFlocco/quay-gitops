@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: quay
+  namespace: openshift-gitops 
+spec:
+  project: quay
+
+  source:
+    repoURL: https://github.com/SerenaFlocco/quay-gitops.git
+    targetRevision: master
+    path: quay/overlay/clusterA
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: openshift-operators
+
+  syncPolicy:
+    automated: null
+    syncOptions:
+      - CreateNamespace=true
