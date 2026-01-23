@@ -4,7 +4,7 @@ metadata:
   name: quay
   namespace: openshift-gitops
 spec:
-  project: quay
+  project: quay-appproject
 
   source:
     repoURL: https://github.com/SerenaFlocco/quay-gitops.git
