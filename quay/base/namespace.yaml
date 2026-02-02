@@ -5,4 +5,4 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "0"
     openshift.io/node-selector: node-role.kubernetes.io/infra=
-    scheduler.alpha.kubernetes.io/defaultTorelations: '[{"operator": "Exists", "effect": "NoSchedule", "key": "node-role.kubernetes.io/infra"},{"operator": "Exists", "effect": "NoSchedule", "key": "node-role.kubernetes.io/infra"}]'
+    scheduler.alpha.kubernetes.io/defaultTorelations: '[{"operator":"Equal","value":"","effect":"NoSchedule","key":"node-role.kubernetes.io/infra"},{"operator":"Equal","value":"","effect":"NoExecute","key":"node-role.kubernetes.io/infra"}]'
