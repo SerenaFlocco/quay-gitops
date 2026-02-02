@@ -3,6 +3,8 @@ kind: Subscription
 metadata:
   name: quay-operator
   namespace: registry
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   channel: stable-3.15
   name: quay-operator
