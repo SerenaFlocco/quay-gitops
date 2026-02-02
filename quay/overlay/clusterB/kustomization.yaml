@@ -4,4 +4,5 @@ kind: Kustomization
 resources:
   - ../../base
   - subscription.yaml
+  - quay-operatorgroup.yaml
 #  - quayregistry.yaml
